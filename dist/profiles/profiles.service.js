@@ -50,6 +50,15 @@ let ProfilesService = class ProfilesService {
         this.profiles.push(newProfile);
         return newProfile;
     }
+    update(id, updateProfileDto) {
+        const matchingProfile = this.profiles.findIndex(profile => profile.id === id);
+        if (matchingProfile !== -1) {
+            this.profiles[matchingProfile] = {
+                ...this.profiles[matchingProfile],
+                ...updateProfileDto
+            };
+        }
+    }
 };
 exports.ProfilesService = ProfilesService;
 exports.ProfilesService = ProfilesService = __decorate([

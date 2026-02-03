@@ -19,4 +19,5 @@ export declare class ProfilesService {
         description: string;
         id: `${string}-${string}-${string}-${string}-${string}`;
     };
+    update(id: string, updateProfileDto: Partial<CreateProfileDto>): void;
 }
