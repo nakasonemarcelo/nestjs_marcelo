@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProfilesService = void 0;
 const common_1 = require("@nestjs/common");
+const crypto_1 = require("crypto");
 let ProfilesService = class ProfilesService {
     profiles = [
         { id: "92a1c06b-8e81-487f-b7b6-5a4dc9005526",
@@ -40,6 +41,14 @@ let ProfilesService = class ProfilesService {
     }
     findOne(id) {
         return this.profiles.find(profile => profile.id === id);
+    }
+    create(createProfileDto) {
+        const newProfile = {
+            id: (0, crypto_1.randomUUID)(),
+            ...createProfileDto,
+        };
+        this.profiles.push(newProfile);
+        return newProfile;
     }
 };
 exports.ProfilesService = ProfilesService;

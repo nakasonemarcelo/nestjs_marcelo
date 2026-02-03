@@ -20,6 +20,7 @@ export declare class ProfilesController {
         name: string;
         age: number;
         description: string;
+        id: `${string}-${string}-${string}-${string}-${string}`;
     };
     update(id: string, updateProfileDto: UpdateProfileDto): {
         name?: string;

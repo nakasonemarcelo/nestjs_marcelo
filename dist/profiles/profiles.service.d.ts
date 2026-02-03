@@ -1,3 +1,4 @@
+import { CreateProfileDto } from './dto/create-profile.dto';
 export declare class ProfilesService {
     private profiles;
     findAll(): {
@@ -12,4 +13,10 @@ export declare class ProfilesService {
         age: number;
         description: string;
     } | undefined;
+    create(createProfileDto: CreateProfileDto): {
+        name: string;
+        age: number;
+        description: string;
+        id: `${string}-${string}-${string}-${string}-${string}`;
+    };
 }
