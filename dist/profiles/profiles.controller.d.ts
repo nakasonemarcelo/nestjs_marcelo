@@ -22,12 +22,7 @@ export declare class ProfilesController {
         description: string;
         id: `${string}-${string}-${string}-${string}-${string}`;
     };
-    update(id: string, updateProfileDto: UpdateProfileDto): {
-        name?: string;
-        age?: number;
-        description?: string;
-        id: string;
-    };
+    update(id: string, updateProfileDto: UpdateProfileDto): {};
     remove(id: string): {
         id: string;
     };

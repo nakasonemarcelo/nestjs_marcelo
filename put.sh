@@ -1,8 +1,9 @@
 #!/bin/bash
 
-curl -X POST -i http://localhost:3000/profiles/ \
+curl -X PUT -i http://localhost:3000/profiles/ebc323a4-4554-48c4-9492-e9516249fa16 \
    -H "Content-Type: application/json" \
    -d '{
-      "name": "Kai", 
-      "description": "This Javascript developer is the best developer of the world."
+      "name": "Mustafa Satriani",
+      "age": 30,
+      "description": "Musta is a .NET developer who loves coding, gaming, and hiking."
    }'

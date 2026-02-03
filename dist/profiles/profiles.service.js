@@ -16,7 +16,7 @@ let ProfilesService = class ProfilesService {
             age: 28,
             description: 'Urban beekeeper and late-night jazz pianist who crafts honey-infused melodies.' },
         { id: "d08c86ae-9cc5-403b-bac1-2f564d214371",
-            name: 'Dr. Cai Navarro',
+            name: 'Tom Mouna Bundja',
             age: 42,
             description: 'Experimental cartographer mapping imagined cities with augmented-reality ink.' },
         { id: "2b14e37b-9cad-4dcb-af73-e5579ab702d9",
@@ -43,22 +43,28 @@ let ProfilesService = class ProfilesService {
         return this.profiles.find(profile => profile.id === id);
     }
     create(createProfileDto) {
-        const newProfile = {
+        const createdProfile = {
             id: (0, crypto_1.randomUUID)(),
             ...createProfileDto,
         };
-        this.profiles.push(newProfile);
-        return newProfile;
+        this.profiles.push(createdProfile);
+        return createdProfile;
     }
     update(id, updateProfileDto) {
-        const matchingProfile = this.profiles.find((existingProfile) => existingProfile.id === id);
+        const matchingProfile = this.profiles.find(existingProfile => existingProfile.id === id);
         if (!matchingProfile) {
             return {};
         }
-        matchingProfile.name = updateProfileDto.name ?? matchingProfile.name;
-        matchingProfile.age = updateProfileDto.age ?? matchingProfile.age;
-        matchingProfile.description = updateProfileDto.description ?? matchingProfile.description;
+        matchingProfile.name = updateProfileDto.name;
+        matchingProfile.age = updateProfileDto.age;
+        matchingProfile.description = updateProfileDto.description;
         return matchingProfile;
+    }
+    remove(id) {
+        const matchingProfileIndex = this.profiles.findIndex(existingProfile => existingProfile.id === id);
+        if (matchingProfileIndex > -1) {
+            this.profiles.splice(matchingProfileIndex, 1);
+        }
     }
 };
 exports.ProfilesService = ProfilesService;

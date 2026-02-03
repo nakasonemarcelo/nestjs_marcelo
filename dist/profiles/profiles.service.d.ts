@@ -1,5 +1,5 @@
-import { CreateProfileDto } from './dto/create-profile.dto';
-import { UpdateProfileDto } from './dto/update-profile.dto';
+import type { CreateProfileDto } from './dto/create-profile.dto';
+import type { UpdateProfileDto } from './dto/update-profile.dto';
 export declare class ProfilesService {
     private profiles;
     findAll(): {
@@ -21,4 +21,5 @@ export declare class ProfilesService {
         id: `${string}-${string}-${string}-${string}-${string}`;
     };
     update(id: string, updateProfileDto: UpdateProfileDto): {};
+    remove(id: string): void;
 }

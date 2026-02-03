@@ -1,1 +1,1 @@
-{"version":3,"file":"update-profile.dto.js","sourceRoot":"","sources":["../../../src/profiles/dto/update-profile.dto.ts"],"names":[],"mappings":";;;AAAA,MAAa,gBAAgB;IACzB,IAAI,CAAU;IACd,GAAG,CAAU;IACb,WAAW,CAAU;CACxB;AAJD,4CAIC"}
+{"version":3,"file":"update-profile.dto.js","sourceRoot":"","sources":["../../../src/profiles/dto/update-profile.dto.ts"],"names":[],"mappings":";;;AAAA,MAAa,gBAAgB;IACzB,IAAI,CAAS;IACb,GAAG,CAAS;IACZ,WAAW,CAAS;CACvB;AAJD,4CAIC"}

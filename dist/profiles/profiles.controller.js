@@ -32,12 +32,10 @@ let ProfilesController = class ProfilesController {
         return this.profilesService.create(createProfileDto);
     }
     update(id, updateProfileDto) {
-        return {
-            id,
-            ...updateProfileDto
-        };
+        return this.profilesService.update(id, updateProfileDto);
     }
     remove(id) {
+        this.profilesService.remove(id);
         return { id };
     }
 };
