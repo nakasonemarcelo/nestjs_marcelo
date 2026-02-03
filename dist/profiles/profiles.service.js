@@ -51,13 +51,14 @@ let ProfilesService = class ProfilesService {
         return newProfile;
     }
     update(id, updateProfileDto) {
-        const matchingProfile = this.profiles.findIndex(profile => profile.id === id);
-        if (matchingProfile !== -1) {
-            this.profiles[matchingProfile] = {
-                ...this.profiles[matchingProfile],
-                ...updateProfileDto
-            };
+        const matchingProfile = this.profiles.find((existingProfile) => existingProfile.id === id);
+        if (!matchingProfile) {
+            return {};
         }
+        matchingProfile.name = updateProfileDto.name ?? matchingProfile.name;
+        matchingProfile.age = updateProfileDto.age ?? matchingProfile.age;
+        matchingProfile.description = updateProfileDto.description ?? matchingProfile.description;
+        return matchingProfile;
     }
 };
 exports.ProfilesService = ProfilesService;
