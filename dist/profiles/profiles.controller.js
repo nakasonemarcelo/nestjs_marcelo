@@ -60,7 +60,7 @@ __decorate([
 ], ProfilesController.prototype, "findOne", null);
 __decorate([
     (0, common_1.Post)(),
-    __param(0, (0, common_1.Body)()),
+    __param(0, (0, common_1.Body)(new common_1.ValidationPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_profile_dto_1.CreateProfileDto]),
     __metadata("design:returntype", void 0)
