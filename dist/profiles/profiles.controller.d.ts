@@ -15,14 +15,19 @@ export declare class ProfilesController {
         name: string;
         age: number;
         description: string;
-    } | undefined;
+    };
     create(createProfileDto: CreateProfileDto): {
         name: string;
         age: number;
         description: string;
         id: `${string}-${string}-${string}-${string}-${string}`;
     };
-    update(id: string, updateProfileDto: UpdateProfileDto): {};
+    update(id: string, updateProfileDto: UpdateProfileDto): {
+        id: string;
+        name: string;
+        age: number;
+        description: string;
+    };
     remove(id: string): {
         id: string;
     };

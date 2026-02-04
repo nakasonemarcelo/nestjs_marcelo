@@ -26,7 +26,12 @@ let ProfilesController = class ProfilesController {
         return this.profilesService.findAll();
     }
     findOne(id) {
-        return this.profilesService.findOne(id);
+        try {
+            return this.profilesService.findOne(id);
+        }
+        catch (error) {
+            throw new common_1.NotFoundException(error.message);
+        }
     }
     create(createProfileDto) {
         return this.profilesService.create(createProfileDto);
