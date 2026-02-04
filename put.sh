@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -X PUT -i http://localhost:3000/profiles/d08c86ae-9cc5-403b-bac1-2f564d214371 \
+curl -X PUT -i http://localhost:3000/profiles/92a1c06b-8e81-487f-b7b6-5a4dc9005526 \
    -H "Content-Type: application/json" \
    -d '{
       "name": "Mustafa Satriani",
