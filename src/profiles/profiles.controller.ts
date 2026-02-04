@@ -1,7 +1,8 @@
-import { Controller, Get, Query, Param, Post, Body, Put, Delete, HttpCode, HttpStatus, HttpException, NotFoundException, ParseUUIDPipe, ValidationPipe } from '@nestjs/common';
+import { Controller, Get, Query, Param, Post, Body, Put, Delete, HttpCode, HttpStatus, HttpException, NotFoundException, ParseUUIDPipe, ValidationPipe, UseGuards } from '@nestjs/common';
 import { CreateProfileDto } from './dto/create-profile.dto';
 import { UpdateProfileDto } from './dto/update-profile.dto';
 import { ProfilesService } from './profiles.service';
+import { ProfilesGuard } from './profiles.guard';
 import { NotFoundError } from 'rxjs';
 import type { UUID } from 'crypto';
 
@@ -42,6 +43,7 @@ export class ProfilesController {
 
     // Delete /profiles/:id
     @Delete(':id')
+    @UseGuards(ProfilesGuard)
     @HttpCode(HttpStatus.NO_CONTENT)
     remove(@Param('id', ParseUUIDPipe) id: UUID) {
         this.profilesService.remove(id);
